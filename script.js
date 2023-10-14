@@ -1,28 +1,22 @@
-// function theme1() {
-//     let calc = document.querySelector('.calculator');
-//     let inputs = document.querySelectorAll('.calculator input');
 
-//     calc.classList.add('theme_one');
-//     inputs.forEach(e => {
-//         e.classList.add('theme_one')
-//     })
-// }
-// function theme2() {
-//     let calc = document.querySelector('.calculator');
-//     let inputs = document.querySelectorAll('.calculator input');
+function runThemes() {
+    let radios = document.querySelectorAll('input[type="radio"]');
+    let calculator = document.querySelector(".calculator");
+    let inputs = document.querySelectorAll('input[type="button"]');
+    let inputDisplay = document.querySelector('input[type="text"]');
+    let a = 8;
+    let bgClrs = ['#800080', '#dc143c', '#008000', '#000080', '#000035','#008080', '#ffff00', '#228b22', '#c0c0c0'];
+    let txtClrs = ['yellow', 'lime', 'chartreuse', 'orange', 'purple', 'azure', 'navy', 'cyan', 'brown']
 
-//     calc.classList.add('theme_two');
-//     inputs.forEach(e => {
-//         e.classList.add('theme_two')
-//     })
-// }
-// function runThemes() {
-//     let radio1 = document.querySelector('#one');
-//     let radio2 = document.querySelector('#two');
-//     let radio3 = document.querySelector('#three');
-
-//     radio1.addEventListener('click', theme1)
-//     radio2.addEventListener('click', theme2)
-//     radio1.ch
-// }
-// runThemes()
+    for (let i = 0; i <= a; i++){
+        radios[i].onclick = () => {
+            calculator.style.background = bgClrs[i];
+            inputs.forEach(e => {
+                e.style.color = txtClrs[i];
+            })
+            inputDisplay.style.color = txtClrs[i];
+        }
+    }
+ 
+}
+runThemes()
